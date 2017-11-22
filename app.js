@@ -29,14 +29,14 @@ app.get('/', function(req, res){
 //blog page
 app.get('/blog', function(req, res){
   res.render('blog',{
-    posts: all_posts,
+    post: all_posts,
     title:"Blog"
   });
 });
 
 //adding posts to the blog page
 app.get('/add-blog', function(req, res){
-  query('insert into blog (title, posts, posttime) values ($1, $2, $3)', [req.query.title, req.query.posts, req.query.posttime], function(err, result) {
+  query('insert into blog (title, posts) values ($1, $2)', [req.query.title, req.query.posts], function(err, result) {
     if(err){
       console.log(err);
       return done (client);
@@ -52,6 +52,6 @@ app.get('*', function(req, res){
 });
 
 //server location
-var server = app.listen(3999, function(){
+var server = app.listen(3333, function(){
   console.log('open http://localhost:3333 in the browser');
 });

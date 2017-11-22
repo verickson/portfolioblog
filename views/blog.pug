@@ -4,7 +4,7 @@ div
    h2='Blog'
    br
    |
-   form(action="/add-message" method="GET")
+   form(action="/add-blog" method="GET")
      div
        label= 'Title:'
        input(type='text' name='title')
@@ -16,10 +16,10 @@ div
    br
    |
    div
-     each posts in blog
+     each post in blog
        div
-         h3= posts.title
-         p= posts.posts
-         div= posts.posttime
+         h3= post.title
+         p= post.posts
+         div= post.posttime
 
 include includes/footer.pug

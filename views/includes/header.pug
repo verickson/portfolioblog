@@ -6,9 +6,18 @@ html
     script(src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin="anonymous")
   body
-    header
-      ul
-        li
-          a(class='' href='/') Portfolio
-        li
-          a(class='' href='/blog') Blog
+    div(class='navbar-wrapper')
+      div(class='')
+        nav(class='navbar navbar-inverse')
+          div(class='container-fluid')
+            div(class='navbar-header')
+              button(type='button' class='navbar-toggle collapsed' ata-toggle='collapse' data-target='#largenav' aria-expanded='false')
+                span(class='icon-bar')
+                span(class='icon-bar')
+                span(class='icon-bar')
+            div(class='collapse navbar-collapse' id='largenav')
+              ul(class='nav navbar-nav')
+                li
+                  a(class='' href='/') Portfolio
+                li
+                  a(class='' href='/blog') Blog
