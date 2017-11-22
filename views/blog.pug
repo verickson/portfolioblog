@@ -1,0 +1,25 @@
+include includes/header.pug
+
+div
+   h2='Blog'
+   br
+   |
+   form(action="/add-message" method="GET")
+     div
+       label= 'Title:'
+       input(type='text' name='title')
+     div
+       label= 'Message Text:'
+       textarea(name='posts')
+     div
+       button(type='submit' class='btn btn-primary') Add Post
+   br
+   |
+   div
+     each posts in blog
+       div
+         h3= posts.title
+         p= posts.posts
+         div= posts.posttime
+
+include includes/footer.pug
