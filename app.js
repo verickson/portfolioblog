@@ -19,18 +19,18 @@ app.set('view engine', 'pug');
 
 //home page
 app.get('/', function(req, res){
-  get_all_posts().then(function(all_posts){
-    res.render('index',{
-      title:"Portfolio"
-    });
+  res.render('index',{
+    title:"Portfolio"
   });
 });
 
 //blog page
 app.get('/blog', function(req, res){
-  res.render('blog',{
-    post: all_posts,
-    title:"Blog"
+  get_all_posts().then(function(all_posts){
+    res.render('blog',{
+      blogposts: all_posts,
+      title:"Blog"
+    });
   });
 });
 
